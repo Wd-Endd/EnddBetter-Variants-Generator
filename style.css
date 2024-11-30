@@ -1,0 +1,288 @@
+@font-face {
+  font-family: Minecraft-Ten;
+  src: url('fonts/Minecraft-Ten-ed29a.otf');
+}
+@font-face {
+  font-family: Mojangles;
+  src: url('fonts/Mojangles.ttf');
+}
+@font-face {
+  font-family: Unicode;
+  src: url('fonts/minecraft-unicode.ttf');
+}
+
+.user-select-none {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Standard syntax */
+}
+
+a {
+  display: flex;
+  font-family: Mojangles;
+  align-content: center;
+  justify-content: center;
+  color: #fff;
+}
+
+a img {
+  height: 32px;
+  width: 32px;
+}
+div.hor {
+  display: flex;
+  align-items: center;
+}
+
+html {
+  background-image: url('https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/SS_Cherry_dotNET_img_01_1170x500.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100vh;
+  margin: auto auto;
+  left: 0;
+  top: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 60px auto;
+  flex: 1;
+}
+
+header {
+  z-index: 1000; /* Đảm bảo header sẽ ở trên các phần tử khác */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #eee;
+  border-bottom: 5px solid #BBB;
+  outline: 1px solid #000;
+  text-align: center;
+  font-family: 'Minecraft-Ten';
+  font-size: calc(48px / 3);
+}
+
+header h1 {
+  position: relative;
+  bottom: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+footer {
+  display: flex;
+  position: sticky;
+  margin: auto auto;
+  width: 100%;
+  color: white;
+  background-color: #5a5a5a;
+  border-top: 4px solid #777;
+  outline: 1px solid black;
+  padding: 16px;
+}
+
+footer .I {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+}
+
+footer .I h5 {
+  font-family: Minecraft-Ten;
+  text-align: center;
+}
+
+button, input, select, textarea, a, label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Panel */
+.root-panel {
+  padding: 4px;
+  color: white;
+  min-height: 100%;
+  background-position: center top;
+}
+
+.root-panel h4 {
+  max-height: 6px;
+  font-family: 'Minecraft-Ten';
+  padding-left: 4px;
+  
+}
+
+
+.scrolling-panel {
+  display: flex;
+  position: relative;
+  overflow: auto;
+  margin: 5px auto;
+  width: 80%;
+  background-color: #2a2a2a;
+  border-bottom: 2px solid #222;
+  outline: 1px solid black;
+  min-width: 300px;
+  max-height: 60vh;
+}
+/*
+.scrolling-panel::-webkit-scrollbar {
+  width: 3px;
+}
+
+.scrolling-panel::-webkit-scrollbar-thumb {
+  background-color: #555;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+*/
+
+/* Options */
+.option-toggle {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 4px;
+  padding-bottom: 4px;
+}
+
+.option-toggle div {
+  display: flex;            
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.option-toggle div label {
+  font-family: Mojangles;
+  margin: 0;                
+}
+
+.option-toggle input[type="checkbox"] {
+  -webkit-appearance: none; /* Xóa kiểu mặc định trên trình duyệt Webkit */
+  -moz-appearance: none;    /* Xóa kiểu mặc định trên Firefox */
+  appearance: none;         /* Xóa kiểu mặc định trên các trình duyệt khác */
+  width: auto;              /* Kích thước checkbox */
+  height: 22px;
+  aspect-ratio: 30 / 16;
+  cursor: pointer;
+  background-image: url('textures/toggle_off.png'); /* Ảnh cho trạng thái chưa chọn */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Khi checkbox được chọn */
+.option-toggle input[type="checkbox"]:checked {
+  background-image: url('textures/toggle_on.png'); /* Ảnh cho trạng thái đã chọn */
+}
+
+.option-toggle div p {
+  font-family: Mojangles;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  width: 100%;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+button.minecraft {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 32px;
+
+  background-color: #ddd;
+  border: none;
+  border-bottom: 3px solid #777;
+  outline: 1px solid black;
+
+  font-family: Mojangles;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.minecraft:active {
+  border-bottom: none;
+  transform: translateY(2px) scaleY(calc((32 - 3) / 32));
+}
+
+.option-radio {
+  padding-bottom: 4px;
+  padding-left: 4px;
+}
+
+.option-radio label {
+  font-family: Mojangles;
+}
+
+.option-radio p {
+  font-family: Mojangles;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  width: 100%;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.option-radio form {
+  display: flex;
+  flex-grow: 0;
+}
+
+.option-radio form div {
+  margin-left: 1px;
+  flex-grow: 0;
+  flex: 1;
+}
+
+.option-radio form div input {
+  display: none;
+}
+
+.option-radio form div label {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+
+  height: 32px;
+  border: none;
+  color: #333;
+  background-color: #ddd;
+  border-bottom: 3px solid #777;
+  outline: 1px solid black;
+  transition: all 0.3s ease;
+}
+
+.option-radio form div input:checked + label {
+  background-color: #3C8527;
+  color: white;
+
+  border-bottom-color: transparent;
+  transform: translateY(2px) scaleY(calc((32 - 3) / 32));
+}

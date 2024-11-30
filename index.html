@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endd Better UI: Variants Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <header>
+      <h1  class=user-select-none>Endd Better UI: Variants Generator</h1>
+    </header>
+
+    <div class=content>
+      <div class=scrolling-panel>
+        <div class=root-panel>
+
+          <h4>Container Buttons</h4>
+          <div  class=option-radio>
+            <label>Container Buttons Type:</label>
+            <form>
+              <div>
+                <input type="radio"id="newContainerButtons" name="containerButtonsTyps" value="switch" checked>
+                <label for="newContainerButtons">Default</label>
+              </div>
+              <div>
+                <input type="radio" id="OldContainerButtons" name="containerButtonsTyps" value="radio">
+                <label for="OldContainerButtons">Old (1.0.5)</label>
+              </div>
+            </form>
+          </div>
+
+          <div class=option-toggle>
+            <div>
+              <label><span style="color: #308400"></span> One line HoverText</label>
+              <p>When enabled, the HoverText of Container Buttons like Container Controller Button, Inventory Container Buttons,... will be only one line, no longer have KeyTip descriptions below. But it will be very convenient for people who already know how to use those buttons!</p>
+            </div>
+            <input type=checkbox id=on_line_hovertext_toggle>
+          </div>
+  
+          <h4>Hud Screen</h4>
+          <div class=option-toggle>
+            <div>
+              <label>Always Show Hud</label>
+              <p>Vanilla: Off. This feature will make the Hud always show in the background instead of hiding. Be careful before enabling it because it will corrupt the Touch Control.</p>
+            </div>
+            <input type=checkbox id=aways_show_hud>
+          </div>
+
+          <div class=option-toggle>
+            <div>
+              <label>One Line ItemTip</label>
+              <p>Vanilla: Off. This setting will cause the Item Name Text to be one line only, even if the item is enchanted. should not be enabled because its Background width may not be correct.</p>
+            </div>
+            <input type=checkbox id=no_enchanted_text>
+          </div>
+  
+          <h4>Loading Screen</h4>
+          <div class=option-toggle>
+            <div>
+              <label>Use Loading Screen Background</label>
+              <p>Vanilla: On. If this is off it will remove the Background behind the Loading Screen and leave what you see;-;</p>
+            </div>
+            <input type=checkbox checked id=loading_bg_toggle>
+          </div>
+
+          <div class=option-toggle>
+            <div>
+              <label>Forced use Loading Bar</label>
+              <p>Vanilla: Off. When enabled, the Loading Bar is always visible regardless of the type of Loading Screen.</p>
+            </div>
+            <input type=checkbox checked id=loading_bar_toggle>
+          </div>
+
+          <!-- <p id="status"></p> -->
+        </div>
+      </div>
+
+      <button class=minecraft id=pack_generate>Generate</button>
+
+    </div>
+    <footer>
+      <div class=I>
+        <h5>Resource</h5>
+        <a href=https://www.minecraft.net>Minecraft</a>
+        <a href=https://www.svgrepo.com/>SVG Repo</a>
+      </div>
+      <div style="flex:1"></div>
+      <div class=I>
+        <h5>Mods</h5>
+        <a href=https://mcpedl.com/endd-better-ui-pack>Endd Better UI</a>
+        <a href=https://mcpedl.com/endd-bedrock-pc-ui-pack>Endd's PC UI</a>
+        <a href=https://mcpedl.com/endd-sodium-ui-pack>Endd Sodium [UI]</a>
+      </div>
+      <div class=I>
+        <h5>Contact</h5>
+        <a href="https://github.com/Endd2604">
+          <img src=https://www.svgrepo.com/show/475654/github-color.svg>
+        </a>
+        <a href="https://discord.com/users/1001792820736180296">
+          <img src=https://www.svgrepo.com/show/353655/discord-icon.svg>
+        </a>
+        <a href="https://youtube.com/@enddtheend?si=BnvJ3roVve9LPu-L">
+          <img src=https://www.svgrepo.com/show/475700/youtube-color.svg>
+        </a>
+      </div>
+    </footer>
+
+</body>
+</html>
