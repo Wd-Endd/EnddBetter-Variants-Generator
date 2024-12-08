@@ -5,7 +5,33 @@
 // Base Function
 //---
 
-function clickSound() { new Audio("./snd/release-7c974.ogg").play(); }
+const audioContext = new AudioContext();
+let buffer;
+
+// Tải và giải mã âm thanh
+fetch('./snd/release-7c974.ogg')
+  .then(response => response.arrayBuffer())
+  .then(data => audioContext.decodeAudioData(data))
+  .then(decodedBuffer => {
+    buffer = decodedBuffer;
+  })
+  .catch(err => console.error('Error loading audio:', err));
+
+function clickSound() {
+  if (!buffer) return;
+
+  const source = audioContext.createBufferSource();
+  source.buffer = buffer;
+
+  const gainNode = audioContext.createGain();
+  gainNode.gain.value = 1;
+
+  source.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+
+  source.start(0);
+}
+
 function elementID(id) { return document.getElementById(id); }
 function getRadioValue(name) { return document.querySelector(`input[name=${name}]:checked`).value; }
 function generateRandomName(length) { // By Asaki Yuki ;P

@@ -11,7 +11,7 @@
   src: url('fonts/minecraft-unicode.ttf');
 }
 
-.user-select-none {
+.user-select-none, p, h1, h2, h3, h4, h5, label, a {
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none;    /* Firefox */
   -ms-user-select: none;     /* Internet Explorer/Edge */
@@ -132,7 +132,6 @@ button, input, select, textarea, a, label {
   
 }
 
-
 .scrolling-panel {
   display: flex;
   position: relative;
@@ -145,17 +144,35 @@ button, input, select, textarea, a, label {
   min-width: 300px;
   max-height: 60vh;
 }
-/*
-.scrolling-panel::-webkit-scrollbar {
-  width: 3px;
+
+/* Điều chỉnh thanh cuộn dọc */
+.scrolling-panel::-webkit-scrollbar-thumb {
+  background-color: #555; /* Màu của thanh cuộn */
+  border-radius: 0px;
+  transition: background-color 0.3s ease;
 }
 
-.scrolling-panel::-webkit-scrollbar-thumb {
-  background-color: #555;
-  visibility: hidden;
-  transition: visibility 0.3s ease;
+/* Khi hover vào thanh cuộn */
+.scrolling-panel::-webkit-scrollbar-thumb:hover {
+  background-color: #777; /* Màu sáng hơn khi hover */
 }
-*/
+
+/* Ẩn một nửa thanh cuộn dọc */
+.scrolling-panel::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Áp dụng cho cả Chrome/Safari và Firefox */
+.scrolling-panel {
+  /* Firefox: Điều chỉnh màu thanh cuộn */
+  scrollbar-color: #555 transparent; /* Thumb (#555), Track (transparent) */
+  scrollbar-width: thin; /* Độ rộng thanh cuộn (thin, auto, none) */
+}
+
+/* Khi hover vào thanh cuộn */
+.scrolling-panel:focus-within {
+  scrollbar-color: #777 transparent; /* Màu sáng hơn khi hover */
+}
 
 /* Options */
 .option-toggle {
@@ -195,6 +212,10 @@ button, input, select, textarea, a, label {
   background-image: url('textures/toggle_on.png'); /* Ảnh cho trạng thái đã chọn */
 }
 
+.option-toggle input:hover {
+  outline: 1px solid white;
+}
+
 .option-toggle div p {
   font-family: Mojangles;
   color: rgba(255, 255, 255, 0.5);
@@ -211,13 +232,13 @@ button.minecraft {
   width: 300px;
   height: 32px;
 
-  background-color: #ddd;
+  background-color: #3C8527;
   border: none;
-  border-bottom: 3px solid #777;
+  border-bottom: 3px solid #245018;
   outline: 1px solid black;
 
-  font-family: Mojangles;
-  color: #333;
+  font-family: Minecraft-Ten;
+  color: White;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -225,6 +246,17 @@ button.minecraft {
 button.minecraft:active {
   border-bottom: none;
   transform: translateY(2px) scaleY(calc((32 - 3) / 32));
+}
+
+button.minecraft:not(:active):hover {
+  background-color: #46992e;
+  border-bottom: 3px solid #2c601e;
+  outline: 1px solid White;
+}
+
+button.minecraft:active:hover {
+  background-color: #46992e;
+  outline: 1px solid White;
 }
 
 .option-radio {
@@ -279,10 +311,22 @@ button.minecraft:active {
   transition: all 0.3s ease;
 }
 
+.option-radio form div input:hover + label {
+  color: #444;
+  background-color: #eee;
+  border-bottom: 3px solid #888;
+  outline: 1px solid White;
+}
+
 .option-radio form div input:checked + label {
   background-color: #3C8527;
   color: white;
 
   border-bottom-color: transparent;
   transform: translateY(2px) scaleY(calc((32 - 3) / 32));
+}
+
+.option-radio form div input:checked + label:hover {
+  background-color: #46992e;
+  outline: 1px solid White;
 }
